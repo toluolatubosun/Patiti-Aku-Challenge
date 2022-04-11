@@ -1,0 +1,861 @@
+{
+	"info": {
+		"_postman_id": "53e107a9-dc4f-4f40-a924-bb971dcd50fe",
+		"name": "Patiti",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"johnlatubosun@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{END_POINT}}/users/",
+							"host": [
+								"{{END_POINT}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error - Email already used",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"toluolatubosun@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{END_POINT}}/users/",
+									"host": [
+										"{{END_POINT}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d-UeKLSLW2fSU9uJA8y7uUZ5N8d7I\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Apr 2022 22:05:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User already exists\",\n    \"data\": null,\n    \"success\": false\n}"
+						},
+						{
+							"name": "Error - Email is required",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{END_POINT}}/users/",
+									"host": [
+										"{{END_POINT}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-BZ0F3mlki7T42JdAhgdJl9pp+f8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Apr 2022 22:05:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email is required\",\n    \"data\": null,\n    \"success\": false\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"toluolatubosun@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{END_POINT}}/users/",
+									"host": [
+										"{{END_POINT}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "218"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"da-lp6Ii8WsFU4calm18n3X21qOpWM\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Apr 2022 22:09:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User created\",\n    \"data\": {\n        \"email\": \"toluolatubosun@gmail.com\",\n        \"_id\": \"6254a70a01e0a1d0538a8fad\",\n        \"consents\": [],\n        \"createdAt\": \"2022-04-11T22:09:14.852Z\",\n        \"updatedAt\": \"2022-04-11T22:09:14.852Z\",\n        \"__v\": 0\n    },\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{END_POINT}}/users/6254a6de01e0a1d0538a8faa",
+							"host": [
+								"{{END_POINT}}"
+							],
+							"path": [
+								"users",
+								"6254a6de01e0a1d0538a8faa"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{END_POINT}}/users/6254a70a01e0a1d0538a8fad",
+									"host": [
+										"{{END_POINT}}"
+									],
+									"path": [
+										"users",
+										"6254a70a01e0a1d0538a8fad"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "215"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d7-09jiO4pcI84MctuFQ41L7E1gPSo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Apr 2022 22:11:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User data\",\n    \"data\": {\n        \"_id\": \"6254a70a01e0a1d0538a8fad\",\n        \"email\": \"toluolatubosun@gmail.com\",\n        \"consents\": [],\n        \"createdAt\": \"2022-04-11T22:09:14.852Z\",\n        \"updatedAt\": \"2022-04-11T22:09:14.852Z\",\n        \"__v\": 0\n    },\n    \"success\": true\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{END_POINT}}/users/6254a6de01e0a1d0538a8faa",
+									"host": [
+										"{{END_POINT}}"
+									],
+									"path": [
+										"users",
+										"6254a6de01e0a1d0538a8faa"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-DqWwsIM7czJqZ72T9O31tMQhXbU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Apr 2022 22:11:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User not found\",\n    \"data\": null,\n    \"success\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"6254a95c86bf43908d7eea3f\",\r\n    \"consents\": [\r\n        {\r\n            \"id\": \"email_notification\",\r\n            \"enabled\": false\r\n        },\r\n        {\r\n            \"id\": \"sms_notification\",\r\n            \"enabled\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{END_POINT}}/users/",
+							"host": [
+								"{{END_POINT}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"6254a95c86bf43908d7eea4f\",\r\n    \"consents\": [\r\n        {\r\n            \"id\": \"email_notification\",\r\n            \"enabled\": false\r\n        },\r\n        {\r\n            \"id\": \"sms_notification\",\r\n            \"enabled\": false\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{END_POINT}}/users/",
+									"host": [
+										"{{END_POINT}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "369"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"171-Xq7Kjp9JmJnKjFpwb8ArMwC0+Gg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Apr 2022 22:23:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User updated\",\n    \"data\": {\n        \"_id\": \"6254a95c86bf43908d7eea4f\",\n        \"email\": \"toluolatubosun@gmail.com\",\n        \"consents\": [\n            {\n                \"id\": \"email_notification\",\n                \"enabled\": false,\n                \"_id\": \"6254aa4986bf43908d7eea5d\"\n            },\n            {\n                \"id\": \"sms_notification\",\n                \"enabled\": false,\n                \"_id\": \"6254aa4986bf43908d7eea5e\"\n            }\n        ],\n        \"createdAt\": \"2022-04-11T22:19:08.984Z\",\n        \"updatedAt\": \"2022-04-11T22:23:05.537Z\",\n        \"__v\": 0\n    },\n    \"success\": true\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"6254a95c86bf43908d7eea3f\",\r\n    \"consents\": [\r\n        {\r\n            \"id\": \"email_notification\",\r\n            \"enabled\": false\r\n        },\r\n        {\r\n            \"id\": \"sms_notification\",\r\n            \"enabled\": false\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{END_POINT}}/users/",
+									"host": [
+										"{{END_POINT}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-DqWwsIM7czJqZ72T9O31tMQhXbU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Apr 2022 22:23:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User not found\",\n    \"data\": null,\n    \"success\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"6254aae5ad5be459585e9a3a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{END_POINT}}/users/",
+							"host": [
+								"{{END_POINT}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"6254aae5ad5be459585e9a3a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{END_POINT}}/users/",
+									"host": [
+										"{{END_POINT}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "217"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d9-ppf/UyCseTmN/MH66yEUrvePRf0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Apr 2022 22:26:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User deleted\",\n    \"data\": {\n        \"_id\": \"6254aae5ad5be459585e9a3a\",\n        \"email\": \"johnlatubosun@gmail.com\",\n        \"consents\": [],\n        \"createdAt\": \"2022-04-11T22:25:41.692Z\",\n        \"updatedAt\": \"2022-04-11T22:25:41.692Z\",\n        \"__v\": 0\n    },\n    \"success\": true\n}"
+						},
+						{
+							"name": "Error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"6254aae5ad5be459585e9a3a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{END_POINT}}/users/",
+									"host": [
+										"{{END_POINT}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-DqWwsIM7czJqZ72T9O31tMQhXbU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Apr 2022 22:26:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User not found\",\n    \"data\": null,\n    \"success\": false\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "event",
+			"item": [
+				{
+					"name": "Create Event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"6254a95c86bf43908d7eea3f\",\r\n    \"consents\": [\r\n        {\r\n            \"id\": \"sms_notifications\",\r\n            \"enabled\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{END_POINT}}/events/",
+							"host": [
+								"{{END_POINT}}"
+							],
+							"path": [
+								"events",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user\": \"6254a95c86bf43908d7eea3f\",\r\n    \"consents\": [\r\n        {\r\n            \"id\": \"sms_notifications\",\r\n            \"enabled\": true\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{END_POINT}}/events/",
+									"host": [
+										"{{END_POINT}}"
+									],
+									"path": [
+										"events",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"124-eGm/UPqmxpuJYbaj6YUDInTd5rQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Apr 2022 22:43:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Event created\",\n    \"data\": {\n        \"user\": \"6254a95c86bf43908d7eea3f\",\n        \"consents\": [\n            {\n                \"id\": \"sms_notifications\",\n                \"enabled\": true,\n                \"_id\": \"6254af199f4ae52e2a08a6fe\"\n            }\n        ],\n        \"_id\": \"6254af199f4ae52e2a08a6fd\",\n        \"createdAt\": \"2022-04-11T22:43:37.531Z\",\n        \"updatedAt\": \"2022-04-11T22:43:37.531Z\",\n        \"__v\": 0\n    },\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All By User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{END_POINT}}/events/6254a95c86bf43908d7eea3f",
+							"host": [
+								"{{END_POINT}}"
+							],
+							"path": [
+								"events",
+								"6254a95c86bf43908d7eea3f"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All By User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{END_POINT}}/events/6254a95c86bf43908d7eea3f",
+									"host": [
+										"{{END_POINT}}"
+									],
+									"path": [
+										"events",
+										"6254a95c86bf43908d7eea3f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "538"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21a-gbQ2m03YeEc9ywAI67+rcMHsFRU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Apr 2022 22:44:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User events\",\n    \"data\": [\n        {\n            \"_id\": \"6254aea2ae4a0f27988becfd\",\n            \"user\": \"6254a95c86bf43908d7eea3f\",\n            \"consents\": [\n                {\n                    \"id\": \"email_notifications\",\n                    \"enabled\": false,\n                    \"_id\": \"6254aea2ae4a0f27988becfe\"\n                }\n            ],\n            \"createdAt\": \"2022-04-11T22:41:38.966Z\",\n            \"updatedAt\": \"2022-04-11T22:41:38.966Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6254af199f4ae52e2a08a6fd\",\n            \"user\": \"6254a95c86bf43908d7eea3f\",\n            \"consents\": [\n                {\n                    \"id\": \"sms_notifications\",\n                    \"enabled\": true,\n                    \"_id\": \"6254af199f4ae52e2a08a6fe\"\n                }\n            ],\n            \"createdAt\": \"2022-04-11T22:43:37.531Z\",\n            \"updatedAt\": \"2022-04-11T22:43:37.531Z\",\n            \"__v\": 0\n        }\n    ],\n    \"success\": true\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "END_POINT",
+			"value": "localhost:4000",
+			"type": "string"
+		}
+	]
+}

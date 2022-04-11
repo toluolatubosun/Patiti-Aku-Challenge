@@ -1,6 +1,6 @@
 import express, { Application } from 'express'
 import * as dotenv from "dotenv"
-import 'express-async-errors'
+require('express-async-errors')
 import routes from './routes'
 import errorHandler from "./utils/error-handler"
 

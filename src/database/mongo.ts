@@ -5,7 +5,8 @@ mongoose.connect(
 
     {
         useNewUrlParser: true, 
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+
     } as ConnectOptions, 
 
     (error: NativeError) => {
